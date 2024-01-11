@@ -2,8 +2,14 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
+    chromeWebSecurity: false,
+    defaultCommandTimeout: 60000,
+    responseTimeout: 60000,
+    video: false,
+    retries: {
+      runMode: 0,
+      openMode: 0,
     },
-  },
+    recoverFromRendererCrashes: true,
+  }
 });
